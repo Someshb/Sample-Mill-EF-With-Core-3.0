@@ -1,0 +1,192 @@
+﻿@model IEnumerable<DataAccess.DBEntities.PropertyInfoEntity>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaHora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RollNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WeightScale)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Grade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LabelColor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Breaks)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tensile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Elong)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TensileCD)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ElongCD)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TensileRatio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WetTensile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WetElong)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WetRatio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Brightness)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Converter)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comments)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WeightT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BWSp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BWAct)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MOIsp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MOIact)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JWsp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JWpv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RejectCause)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BulkValue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CrepePv)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaHora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RollNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WeightScale)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Grade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LabelColor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Breaks)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tensile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Elong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TensileCD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ElongCD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TensileRatio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WetTensile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WetElong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WetRatio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brightness)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Converter)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comments)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WeightT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BWSp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BWAct)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MOIsp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MOIact)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JWsp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JWpv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RejectCause)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BulkValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CrepePv)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
