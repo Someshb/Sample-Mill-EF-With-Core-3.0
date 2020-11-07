@@ -14,6 +14,13 @@ namespace DataAccess.DbContexts
         }
         public DbSet<StudentEntity> StudentEntities { get; set; }
         public virtual DbSet<StudentEntity> GetStudentByID { get; set; }
+
         
+
     }
-}
+
+   
+
+
+
+    }

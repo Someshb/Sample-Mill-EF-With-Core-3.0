@@ -6,6 +6,7 @@ using System.Text;
 using Dapper;
 using DataAccess.DBEntities;
 using Microsoft.Extensions.Configuration;
+using MySql.Data.MySqlClient;
 
 namespace DataAccess
 {
@@ -27,21 +28,33 @@ namespace DataAccess
             try
             {
                 
-                using (SqlConnection conn = Connection)
+                using (MySqlConnection conn = Connection)
                 {
                     if (conn.State == ConnectionState.Closed)
                     {
                         conn.Open();
-                        string sQuery = "TestProc";
+                        //string sQuery = "GetStudentByID";
+                        string sQuery = "Select * From student";
                         DynamicParameters parameter = new DynamicParameters();
+                                              
 
-                        result = conn.Query<StudentEntity>(sQuery,CommandType.StoredProcedure);
-                        
+                        parameter.Add("@Param1", "", DbType.String, ParameterDirection.Input);
+                        parameter.Add("@Param2", "", DbType.String, ParameterDirection.Input);
+                        parameter.Add("@Param3", "", dbType: DbType.String, direction: ParameterDirection.Input);
+
+                        result = conn.Query<StudentEntity>(sQuery,
+                          // parameter,
+                            commandType: CommandType.Text);
+
                         //return result;
                     }
                     //
                     //conn.Dispose();
                 }
+
+                /// DO the other processing and logic for ScholerShip 
+
+
                 
             }
             catch (Exception e)
@@ -51,11 +64,15 @@ namespace DataAccess
             return result;
         }
 
-        public SqlConnection Connection
+        public MySqlConnection Connection
         {
             get
             {
-                return new SqlConnection(_config.GetConnectionString("DefaultConnection"));
+                //For Connection to Sql Server ---- Un Comments the followig line 
+                //  return new SqlConnection(_config.GetConnectionString ("DefaultConnection"));
+                // For Connection to MySQL  ---- Un Comments the followig line 
+                 
+                return new MySqlConnection(_config.GetConnectionString("DefaultConnection"));
             }
         }
         public int SQLCommandTimeOut

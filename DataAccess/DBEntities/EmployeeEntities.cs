@@ -6,18 +6,13 @@ using System.Text;
 
 namespace DataAccess.DBEntities
 {
-    public class StudentEntity
+    public class EmployeeEntities 
     {
         [Key]
         public int Id { get; set; }
 
-        [Column(TypeName ="varchar(60)")]
+        [Column(TypeName = "varchar(60)")]
         public string Name { get; set; }
 
-        [Column(TypeName = "varchar(10)")]
-        public string Age { get; set; }
-
-        [Column(TypeName = "varchar(60)")]
-        public string Class { get; set; }
     }
 }
